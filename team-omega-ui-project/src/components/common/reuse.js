@@ -26,7 +26,7 @@ class Reuse extends Component {
           index = this.props.employees.length - 1;
       }
       else {
-          index--;
+          index=index-1;
       } this.setState({
           activeIndex: index
       });
@@ -34,22 +34,33 @@ class Reuse extends Component {
     this.setState({
               activeIndex: index
           });
+        //   document.querySelector('.carousel-item').classList.add('active-Slide-left');
+        //   setTimeout(()=>{
+        //       document.querySelector('.carousel-item').classList.remove('active-Slide-left')  
+        //   },1100)
   }
 
 
   goToNextSlide() {
-    
+                  
     let index = this.state.activeIndex;
     if (index >= this.props.employees.length - 1) {
         index = 0;
     }
     else {
-        index++;
+        index=index+1;
     }
     this.setState({
         activeIndex: index
+        
     });
+
+    // document.querySelector('.carousel-item').classList.add('active-Slide-right');
+    // setTimeout(()=>{
+    //     document.querySelector('.carousel-item').classList.remove('active-Slide-right')  
+    // },1100)
 }
+
 
 
 
@@ -57,7 +68,7 @@ class Reuse extends Component {
 
     render() {
         
-       console.log('data', this.props)
+     //  console.log('data', this.props)
 
         return (
      <a   id="test"  className={this.props.carouselClass} href="#demo"   data-slide={this.props.dataSlide}  title={this.props.title} aria-label={this.props.ariaLabel} >

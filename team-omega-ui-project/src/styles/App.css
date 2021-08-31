@@ -2188,3 +2188,39 @@ button.post-button i {
   }
 }
 /*# sourceMappingURL=main.css.map */
+.active-Slide-right{
+  animation: slide-right 1s ease-in-out;
+}
+@keyframes slide-right{
+    0%{
+      transform: translateX(0);
+    }
+    50%{
+      transform: translateX(100%);
+    }
+    51%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+
+}
+.active-Slide-left{
+  animation: slide-left 1s ease-in-out;
+}
+@keyframes slide-left{
+    0%{
+      transform: translateX(0);
+    }
+    50%{
+      transform: translateX(100%);
+    }
+    51%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+
+}

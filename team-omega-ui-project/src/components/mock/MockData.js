@@ -1,7 +1,7 @@
 const Data = {
   heading: "Carousels",
   employees: [
-    [{
+    {
       
       Name: "Satheesh Bhanumurthy",
       Designation: "Project Manager"
@@ -13,8 +13,8 @@ const Data = {
     {
       Name: "Gayathri",
       Designation: "Product Owner"
-    }],
-    [{
+    },
+    {
      
       Name: "Satheesh Bhanumurthy",
       Designation: "Project Manager"
@@ -26,8 +26,8 @@ const Data = {
     {
       Name: "Satheesh Bhanumurthy",
      Designation: "Project Manager"
-    }],
-    [{
+    },
+    {
      
       Name: "Satheesh Bhanumurthy",
       Designation: "Project Manager"
@@ -39,7 +39,7 @@ const Data = {
     {
       Name: "Satheesh Bhanumurthy",
       Designation: "Project Manager"
-    }] 
+    },
     ]
 }
 export default Data;

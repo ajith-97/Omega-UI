@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import CarrouselComponent from '../components/common/carrouselComponent'
-//import logo from '../img/logo.svg';
+import Data from '../components/mock/MockData';
+
 import '../styles/App.css'
 
-class App extends Component {
+ export default class App extends Component {
+     constructor(props){
+       super(props);
+
+    this.elementPerSlide = 3
+      }   
+         
+         
+
+
   render() {
     return (
-     <CarrouselComponent>
-
-       
+     <CarrouselComponent   elementPerSlide = {this.elementPerSlide} employeeList = {this.props.Content}>
+                
      </CarrouselComponent>
       
      
@@ -16,4 +25,6 @@ class App extends Component {
   }
 }
 
-export default App;
+ App.defaultProps = {
+   Content: Data
+ };

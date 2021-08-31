@@ -4,20 +4,50 @@ import '../../styles/App.css'
 import Reuse from '../common/reuse'
 
 class CarrouselComponent extends Component {
+
+                
   constructor(props) {
     super(props);
 
+    this.slideElements=[]
+    console.log('data', this.props)
     this.getChild = this.getChild.bind(this)
     this.state = {
       activeIndex: 0,
+      index:0,
+      
     }
   }
+ // console.log('data', this.props)
 
-
+               
   getChild(x) {
     this.setState({ activeIndex: x })
+     
            }
+           
+        componentDidUpdate(){
+        
+        for(let x in this.props.employeeList.employees){
+            let count=0
+            if(x==(this.state.activeIndex%this.props.elementPerSlide)*this.props.elementPerSlide){
+              this.slideElements.length=0
+                    while(count<this.props.elementPerSlide){
+                       this.slideElements.push(this.props.employeeList.employees[Number.parseInt(x)+count])
+                      
+                       count++;
+                       
+                    }
+                       
+                    break;
 
+            }
+           
+        }
+           
+         // console.log("cat",this.slideElements)
+        }
+                 
   render() {
     return (
       <div>
@@ -29,14 +59,17 @@ class CarrouselComponent extends Component {
                 <div className="row webview-leaders">
                   <div id="demo" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
-                      {this.props.employees.map((x, index) => (
-
-
-
-                        <div className={(index === 0 ? 'carousel-item active' : 'carousel-item') && (index != this.state.activeIndex) ? 'carousel-item' : 'carousel-item active'}>
-
+                        
+                   {/* {this.props.employeeList.employees.map((x, index) =>  */}
+                              
+                        
+                          
+                            
+                        <div className='carousel-item active' >
+                           {/* : 'carousel-item') && (index != this.state.activeIndex) ? 'carousel-item' : 'carousel-item active'}> */}
                           <div className="flex-container-leaders">
-                            {x.map(x1 => (
+                            {this.slideElements.map(x1 => (
+                      
 
                               <div>
                                 <div className="leader-image">
@@ -49,13 +82,15 @@ class CarrouselComponent extends Component {
                             ))}
                           </div>
                         </div>
-                      ))}
+                    
+                       {/* )} */}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        
 
         }
 
@@ -70,6 +105,7 @@ class CarrouselComponent extends Component {
         </Reuse>
 
       </div>
+    
     )
   }
 }
