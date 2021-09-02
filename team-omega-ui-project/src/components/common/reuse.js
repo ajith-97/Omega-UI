@@ -34,13 +34,13 @@ class Reuse extends Component {
     this.setState({
               activeIndex: index
           });
-        //   document.querySelector('.carousel-item').classList.add('active-Slide-left');
-        //   setTimeout(()=>{
-        //       document.querySelector('.carousel-item').classList.remove('active-Slide-left')  
-        //   },1100)
+          document.querySelector('.carousel-item').classList.add('active-Slide-left');
+          setTimeout(()=>{
+              document.querySelector('.carousel-item').classList.remove('active-Slide-left')  
+          },1100)
   }
 
-
+g
   goToNextSlide() {
                   
     let index = this.state.activeIndex;
@@ -55,10 +55,10 @@ class Reuse extends Component {
         
     });
 
-    // document.querySelector('.carousel-item').classList.add('active-Slide-right');
-    // setTimeout(()=>{
-    //     document.querySelector('.carousel-item').classList.remove('active-Slide-right')  
-    // },1100)
+    document.querySelector('.carousel-item').classList.add('active-Slide-right');
+    setTimeout(()=>{
+        document.querySelector('.carousel-item').classList.remove('active-Slide-right')  
+    },1100)
 }
 
 
